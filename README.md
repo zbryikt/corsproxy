@@ -1,7 +1,7 @@
 corsproxy
 ========================
 
-An implementation of CORS proxy in LiveScript. Some code are adopted from [https://github.com/technoboy10/crossorigin.me](crossorigin.me).
+An implementation of CORS proxy in LiveScript. Some code are adopted from [crossorigin.me](https://github.com/technoboy10/crossorigin.me).
 
 
 usage
