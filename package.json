@@ -1,0 +1,19 @@
+{
+  "author": "Kirby Wu",
+  "name": "corsproxy",
+  "description": "simple cors proxy - in LiveScript",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zbryikt/corsproxy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zbryikt/corsproxy"
+  },
+  "engines": {
+    "node": ">=0.12.6",
+    "npm": ">=1.2.2"
+  },
+  "dependencies": {
+    "LiveScript": "=1.2.0",
+    "request": "=2.61.0"
+  }
+}
