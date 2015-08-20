@@ -1,0 +1,36 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var use = { cdn: false, og: false, favicon: true }
+- var lib = { jquery: true, d3js: false, angular: true, bootstrap: true, semantic: false }
+- var assets = "assets"
+- var thumbnail = "thumbnail.png"
+- var favicon = "thumbnail.png"
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title template
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="css/index.css")
+    script(type="text/javascript",src="js/build.min.js")
+  body(ng-app="main",ng-controller="main")
+    #root
+      h1 corsproxy
+      .input-group
+        input.form-control(type="text",ng-model="url",placeholder="some URL, like: http://www.google.com.tw")
+        .input-group-btn
+          button.btn.btn-default.dropdown-toggle.square(type="button",data-toggle="dropdown")
+            | {{method.value}} #[span.caret]
+          ul.dropdown-menu.dropdown-menu-right
+            li: a(href="#",ng-click="method.set('GET')") GET
+            li: a(href="#",ng-click="method.set('POST')") POST
+            li: a(href="#",ng-click="method.set('PUT')") PUT
+            li: a(href="#",ng-click="method.set('DELETE')") DELETE
+          button.btn.btn-default(type="button",ng-click="send()") SEND
+      br
+      textarea.form-control(ng-model="payload",rows="5",placeholder="Params to send, in JSON format")
+      hr
+      label Source Code
+      textarea.form-control(ng-model="response",placeholder="Response goes here",rows="10")
